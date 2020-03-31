@@ -5,23 +5,23 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-//@Document(collection="game")
+@Document
 public class MancalaGame {
 	
 	/*
 	 * Id, Player Turn, list/map of pits by each player, current_pit index;
 	 */
 	
-	//@Id
+	@Id
 	private String gameId;
 	private Player playerA;
 	private Player playerB;
 	
-	//@JsonIgnore
+	@JsonIgnore
 	private int currentPitIndex;
 
 	public MancalaGame() {
-		this (MancalaConstants.DEFAULT_PIT_STONES);
+		this (MancalaConstants.DEFAULT_PIT_STONES); //Redundant right now because we are setting stones in player.
 		
 		//Setting up players and their pits initial setup
 		this.playerA = new Player("PlayerA");
@@ -38,6 +38,7 @@ public class MancalaGame {
 		
 	}
 
+	/*
 	public String getGameId() {
 		return gameId;
 	}
@@ -45,6 +46,7 @@ public class MancalaGame {
 	public void setGameId(String gameId) {
 		this.gameId = gameId;
 	}
+	*/
 
 	public Player getPlayerA() {
 		return playerA;
@@ -70,6 +72,20 @@ public class MancalaGame {
 		this.currentPitIndex = currentPitIndex;
 	}
 	
-	
+	//FOR TESTING - DELETE LATER!
+	public void show() {
+		System.out.println("Player name: " + playerA.getPlayerName() + " Big pit ID: " + playerA.getBigPitId() );
+		
+		
+		for(MancalaPit pit : playerA.getSmallPitsList()) {
+			System.out.println("PitID[" + pit.getPitId()+ "], Stones: " + pit.getStonesInPit() );
+		}
+		
+		System.out.println("--------------------------------------------");
+		System.out.println("Player name: " + playerB.getPlayerName() + " Big pit ID: " + playerB.getBigPitId() );
+		for(MancalaPit pit : playerB.getSmallPitsList()) {
+			System.out.println("PitID[" + pit.getPitId()+ "], Stones: " + pit.getStonesInPit() );
+		}
+	}
 
 }

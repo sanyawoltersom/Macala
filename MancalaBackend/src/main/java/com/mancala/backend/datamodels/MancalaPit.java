@@ -5,18 +5,18 @@ public class MancalaPit {
 	 * 
 	 */
 
-	private int pitId;
-	
+	private int pitId;	
 	private int stonesInPit;
-
-
-	public MancalaPit() {
-
-	}
 
 	public MancalaPit(int pitId) {
 		this.pitId = pitId;
 		this.stonesInPit = MancalaConstants.DEFAULT_PIT_STONES;
+	}
+	
+	//For initializing big pits
+	public MancalaPit(int pitId, int stones) {
+		this.pitId = pitId;
+		this.stonesInPit = stones;
 	}
 
 	public int getPitId() {
