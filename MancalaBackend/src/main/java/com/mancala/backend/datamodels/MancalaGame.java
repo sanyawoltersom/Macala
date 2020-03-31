@@ -37,6 +37,8 @@ public class MancalaGame {
 	public MancalaGame(String playerA, String playerB) {
 		
 	}
+	
+	
 
 	/*
 	public String getGameId() {
