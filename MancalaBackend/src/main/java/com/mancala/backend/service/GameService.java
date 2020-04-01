@@ -18,9 +18,6 @@ public class GameService {
 		// TODO Auto-generated constructor stub
 	}
 
-
-
-	//@Override
 	/*
 	 * This method will load up at game load.
 	 */

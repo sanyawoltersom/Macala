@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class MancalaGame {
 	
 	/*
-	 * Id, Player Turn, list/map of pits by each player, current_pit index;
+	 * 
 	 */
 	
 	@Id
@@ -38,9 +38,6 @@ public class MancalaGame {
 		
 	}
 	
-	
-
-	/*
 	public String getGameId() {
 		return gameId;
 	}
@@ -48,7 +45,7 @@ public class MancalaGame {
 	public void setGameId(String gameId) {
 		this.gameId = gameId;
 	}
-	*/
+	
 
 	public Player getPlayerA() {
 		return playerA;
@@ -76,16 +73,17 @@ public class MancalaGame {
 	
 	//FOR TESTING - DELETE LATER!
 	public void show() {
-		System.out.println("Player name: " + playerA.getPlayerName() + " Big pit ID: " + playerA.getBigPitId() );
+		System.out.println("Player name: " + playerA.getPlayerName() + " Big pit ID: " + playerA.getBigPitId() + " ActiveTurn " + playerA.getActive());
 		
 		
-		for(MancalaPit pit : playerA.getSmallPitsList()) {
+		for(MancalaPit pit : playerA.getSmallPits()) {
 			System.out.println("PitID[" + pit.getPitId()+ "], Stones: " + pit.getStonesInPit() );
 		}
 		
 		System.out.println("--------------------------------------------");
-		System.out.println("Player name: " + playerB.getPlayerName() + " Big pit ID: " + playerB.getBigPitId() );
-		for(MancalaPit pit : playerB.getSmallPitsList()) {
+		
+		System.out.println("Player name: " + playerB.getPlayerName() + " Big pit ID: " + playerB.getBigPitId() + " ActiveTurn " + playerB.getActive());
+		for(MancalaPit pit : playerB.getSmallPits()) {
 			System.out.println("PitID[" + pit.getPitId()+ "], Stones: " + pit.getStonesInPit() );
 		}
 	}

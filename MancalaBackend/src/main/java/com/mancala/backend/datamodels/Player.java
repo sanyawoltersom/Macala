@@ -6,14 +6,16 @@ import java.util.List;
 public class Player {
 	
 	private String playerName;
-	private int totalScore; //Stones in big pit
-	private List<MancalaPit> smallPits; //<pitId from constant, stonescount from Mancala pit class>
+	private int totalScore; 
+	private List<MancalaPit> smallPits; 
 	private int bigPitId;
+	private char active;
 	
 	public Player(String playerName) {
 		super();
 		this.totalScore = 0;
 		this.playerName = playerName;
+		this.active = 'N';
 		
 		if(playerName.equals("PlayerA")) {
 			this.bigPitId = MancalaConstants.PLAYER_A_BIG_PIT_ID;
@@ -43,34 +45,68 @@ public class Player {
 			System.out.println("Something went wrong while creating player!");
 		}
 	}
+	
 
 	public String getPlayerName() {
 		return playerName;
 	}
+
+
+
 	public void setPlayerName(String playerName) {
 		this.playerName = playerName;
 	}
+
+
+
 	public int getTotalScore() {
 		return totalScore;
 	}
+
+
+
 	public void setTotalScore(int totalScore) {
 		this.totalScore = totalScore;
 	}
+
+
+
+	public List<MancalaPit> getSmallPits() {
+		return smallPits;
+	}
+
+
+
+	public void setSmallPits(List<MancalaPit> smallPits) {
+		this.smallPits = smallPits;
+	}
+
+
+
 	public int getBigPitId() {
 		return bigPitId;
 	}
 
+
+
 	public void setBigPitId(int bigPitId) {
 		this.bigPitId = bigPitId;
 	}
-	
-	public List<MancalaPit> getSmallPitsList() {
-		return smallPits;
+
+
+
+	public char getActive() {
+		return active;
 	}
-	public void setSmallPitList(List<MancalaPit> stonesInPit) {
-		this.smallPits = stonesInPit;
+
+
+
+	public void setActive(char active) {
+		this.active = active;
 	}
-	
+
+
+
 	@Override
 	public String toString() {
 		return "Player [playerName=" + playerName + ", totalScore=" + totalScore + "]";

@@ -20,8 +20,8 @@ public class MancalaBackendApplication {
 		SpringApplication.run(MancalaBackendApplication.class, args);
 		
 		//Testing to see relationship between model classes.
-		//MancalaGame game = new MancalaGame();
-		//game.show();
+		MancalaGame game = new MancalaGame();
+		game.show();
 	}
 
 }

@@ -16,14 +16,15 @@
 <input type="text" name="pit5" />
 <input type="text" name="pit6" />
 <br>
-
-<button type="submit">pit1</button>
-<button type="submit">pit2</button>
-<button type="submit">pit3</button>
-<button type="submit">pit4</button>
-<button type="submit">pit5</button>
-<button type="submit">pit6</button>
 </form>
+
+<form><button type="submit" value="1">pit1</button></form>
+<form><button type="submit" value="2">pit2</button></form>
+<form><button type="submit" value="3">pit3</button></form>
+<form><button type="submit" value="4">pit4</button></form>
+<form><button type="submit" value="5">pit5</button></form>
+<form><button type="submit" value="6">pit6</button></form>
+
 
 
 </body>
